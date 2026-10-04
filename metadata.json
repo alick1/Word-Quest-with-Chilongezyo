@@ -1,0 +1,10 @@
+{
+  "name": "Word Quest with Chilongezyo: Grade 4 Spelling Adventure",
+  "description": "Interactive English spelling adventure for Grade 4 pupils at Chinego Primary School with game modes, audio pronunciation, and teacher tools.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

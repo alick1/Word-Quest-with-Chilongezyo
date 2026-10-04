@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --app-font: 'Lexend', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --letter-spacing: 0.01em;
+    --line-height: 1.5;
+  }
+
+  body {
+    font-family: var(--app-font);
+    letter-spacing: var(--letter-spacing);
+    line-height: var(--line-height);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Dyslexia mode overrides */
+  body.font-dyslexia {
+    --app-font: 'Comic Sans MS', 'Lexend', 'Chalkboard SE', cursive, sans-serif;
+    --letter-spacing: 0.08em;
+    --line-height: 1.8;
+    word-spacing: 0.16em;
+  }
+
+  /* High contrast mode */
+  body.high-contrast {
+    filter: contrast(1.25);
+  }
+
+  body.high-contrast .contrast-box {
+    border-width: 2px !important;
+    border-color: #000000 !important;
+  }
+
+  /* Dark mode */
+  body.dark-mode {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
+}
+
+/* Custom interactive touch target and animations */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-gentle-bounce {
+  animation: gentle-bounce 2s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s ease-in-out infinite;
+}
